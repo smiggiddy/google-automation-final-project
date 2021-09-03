@@ -37,7 +37,7 @@ def check_no_network():
 
 
 def main():
-    
+
     checks = [
     (check_cpu_usage, "Error - CPU usage is over 80%"),
     (check_root_full, "Error - Available disk space is less than 20%"),
@@ -53,6 +53,8 @@ def main():
             "Please check your system and resolve the issue as soon as possible."
             )
             emails.send(e_msg_email)
+        else:
+            return True
 
 
 if __name__ == '__main__':
